@@ -49,9 +49,6 @@
                     Posti:  {{ $car->posti }}
                 </div>
                 @endif
-                <div>
-
-                </div>
             </div>
         </div>
     </div>
