@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-10">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <h2 class="text-center text-white mt-3">Le Nostre Auto</h2>
@@ -106,8 +106,13 @@
                                                     <td>{{ $car->immagine }}</td>
                                                     <td><a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
                                                             class="btn btn-sm btn-primary">dettagli</a>
-                                                        <a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
+                                                        <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"
                                                             class="btn btn-sm btn-primary">modifica</a>
+
+                                                        <button class="btn btn-sm btn-danger mt-3" data-bs-toggle="modal"
+                                                            data-bs-target="#modal_delete_{{ $car->id }}">Elimina</button>
+                                                        @include('admin.cars.modal')
+
                                                     </td>
                                                 </tr>
                                             @endforeach

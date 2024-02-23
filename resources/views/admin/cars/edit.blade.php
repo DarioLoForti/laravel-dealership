@@ -3,19 +3,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                @if ($error->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($error->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+
                 <h2 class="text-center text-white my-4">Modifica un auto</h2>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.projects.update', $project->id) }}" method="POST">
+                <form action="{{ route('admin.cars.update', $car->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
@@ -131,7 +123,11 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="form-group my-3">
+                        <button class="btn btn-success" type="submit">Salva</button>
+                    </div>
                 </form>
+
             </div>
         </div>
     </div>

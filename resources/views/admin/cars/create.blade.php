@@ -36,12 +36,12 @@
                     <div class="form-group mb-3">
                         <label class="text-white" for="alimentazione">Alimentazione</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected>Scegli alimentazione</option>
-                            <option value="1">Benzina</option>
-                            <option value="2">Metano</option>
-                            <option value="3">Diesel</option>
-                            <option value="4">GPL</option>
-                            <option value="5">Eletrica</option>
+                            <option>Scegli alimentazione</option>
+                            <option value="Benzina">Benzina</option>
+                            <option value="Metano">Metano</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="GPL">GPL</option>
+                            <option value="Elettrica">Elettrica</option>
                         </select>
                         @error('alimentazione')
                             <div class="text-danger">{{ $message }}</div>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="anno_immatricolazione">Immatricolazione</label>
-                        <input type="date" class="form-control" name="anno_immatricolazione"
+                        <input type="text" class="form-control" name="anno_immatricolazione"
                             id="anno_immatricolazione" placeholder="Immatricolazione"
                             value="{{ old('anno_immatricolazione') }}">
                         @error('anno_immatricolazione')
@@ -119,6 +119,9 @@
                         @error('immagine')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+                    </div>
+                    <div class="form-group my-3">
+                        <button class="btn btn-success" type="submit">Salva</button>
                     </div>
                 </form>
             </div>
