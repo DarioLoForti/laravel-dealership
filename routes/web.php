@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/projects', CarController::class);
+    Route::resource('/cars', CarController::class);
 });
 
 // Route::get('/dashboard', function () {
