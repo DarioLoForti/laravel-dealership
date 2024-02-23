@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('tipologia', 50)->nullable();
             $table->string('stato', 20)->default('nuovo');
             $table->date('anno_immatricolazione')->nullable();
-            $table->mediumInteger('km')->default(0);
+            $table->mediumInteger('km')->nullable()->default(0);
             $table->string('immagine', 255);
             $table->timestamps();
         });
