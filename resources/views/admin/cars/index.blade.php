@@ -104,12 +104,12 @@
                                                     <td>{{ $car->modello }}</td>
                                                     <td>
                                                         @php
-                                                        $prezzo_totale = $car->prezzo;
-                                                        foreach ($car->optionals as $optional){
-                                                            $prezzo_totale += $optional->prezzo;
-                                                        }
+                                                            $prezzo_totale = $car->prezzo;
+                                                            foreach ($car->optionals as $optional) {
+                                                                $prezzo_totale += $optional->prezzo;
+                                                            }
                                                         @endphp
-                                                        {{$prezzo_totale}}
+                                                        {{ $prezzo_totale }}
                                                     </td>
                                                     <td>{{ $car->alimentazione }}</td>
                                                     <td>{{ $car->cilindrata }}</td>
@@ -120,7 +120,7 @@
                                                     <td>{{ $car->stato }}</td>
                                                     <td>{{ $car->anno_immatricolazione }}</td>
                                                     <td>{{ $car->km }}</td>
-                                                    <td>{{ $car->immagine }}</td>
+                                                    <td>{{ Str::limit($car->immagine, 20, '...') }}</td>
                                                     <td>
                                                         @forelse ($car->optionals as $optional)
                                                             #{{ $optional->nome }}
