@@ -25,7 +25,7 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-4">
                         <label class="text-white" for="prezzo">Prezzo</label>
                         <input type="text" class="form-control" name="prezzo" id="prezzo" placeholder="Prezzo"
                             value="{{ old('prezzo') }}">
