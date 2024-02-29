@@ -14,12 +14,12 @@
                 </div>
                 <div>
                     @php
-                        $prezzo_totale = $car->prezzo*100;
+                        $prezzo_totale = $car->prezzo * 100;
                         foreach ($car->optionals as $optional) {
                             $prezzo_totale += $optional->prezzo;
                         }
                     @endphp
-                    <h5 class="text-white mx-2">Prezzo: {{ $prezzo_totale }} $</h5>
+                    <h5 class="text-white mx-2">Prezzo: {{ $prezzo_totale }} €</h5>
                 </div>
                 <div>
                     <h5 class="text-white mx-2">Alimentazione: {{ $car->alimentazione }}</h5>
