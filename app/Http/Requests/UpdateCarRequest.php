@@ -36,7 +36,7 @@ class UpdateCarRequest extends FormRequest
             'stato' => 'required|max:20',
             'anno_immatricolazione' => 'date|nullable',
             'km' => 'nullable',
-            'immagine' => 'max:255',
+            'immagine' => 'max:255|nullable',
 
         ];
     }
