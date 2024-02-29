@@ -104,7 +104,7 @@
                                                     <td>{{ $car->modello }}</td>
                                                     <td>
                                                         @php
-                                                            $prezzo_totale = $car->prezzo;
+                                                            $prezzo_totale = $car->prezzo*100;
                                                             foreach ($car->optionals as $optional) {
                                                                 $prezzo_totale += $optional->prezzo;
                                                             }
