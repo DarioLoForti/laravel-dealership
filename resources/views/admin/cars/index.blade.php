@@ -84,6 +84,7 @@
                                                 <th>Anno_immatricolazione</th>
                                                 <th>Km</th>
                                                 <th>Immagine</th>
+                                                <th>Optional</th>
                                                 <th>Tools</th>
                                             </tr>
                                         </thead>
@@ -104,6 +105,7 @@
                                                     <td>{{ $car->anno_immatricolazione }}</td>
                                                     <td>{{ $car->km }}</td>
                                                     <td>{{ $car->immagine }}</td>
+                                                    <td>{{ $car->optional ? $car->optional->nome : 'Senza optional' }}</td>
                                                     <td><a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
                                                             class="btn btn-sm btn-primary">dettagli</a>
                                                         <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"

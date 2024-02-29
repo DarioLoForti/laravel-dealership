@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('optionals', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 100);
+            $table->text('descrizione');
+            $table->decimal('prezzo', 8, 2); 
             $table->timestamps();
         });
     }
