@@ -113,7 +113,13 @@
                                                     <td>{{ $car->anno_immatricolazione }}</td>
                                                     <td>{{ $car->km }}</td>
                                                     <td>{{ $car->immagine }}</td>
-                                                    <td>{{ $car->optional ? $car->optional->nome : 'Senza optional' }}</td>
+                                                    <td>
+                                                        @forelse ($car->optionals as $optional)
+                                                            #{{ $optional->nome }}
+                                                        @empty
+                                                            nessun optional
+                                                        @endforelse
+                                                    </td>
                                                     <td><a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
                                                             class="btn btn-sm btn-primary">dettagli</a>
                                                         <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"

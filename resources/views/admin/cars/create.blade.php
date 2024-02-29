@@ -91,11 +91,13 @@
                         <p class="text-white">Stato</p>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato1">
-                            <label for="stato1" class="form-check-label text-white" value="nuovo" @checked(old('stato'))>Nuova</label><br>
+                            <label for="stato1" class="form-check-label text-white" value="nuovo"
+                                @checked(old('stato'))>Nuova</label><br>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato2">
-                            <label for="stato2" class="form-check-label text-white" value="usato" @checked(old('stato'))>Usata</label><br>
+                            <label for="stato2" class="form-check-label text-white" value="usato"
+                                @checked(old('stato'))>Usata</label><br>
                         </div>
                         @error('stato')
                             <div class="text-danger">{{ $message }}</div>
@@ -130,9 +132,12 @@
                         <label for="" class="control-label text-white ">Seleziona optional</label>
                         <div>
                             @foreach ($optionals as $optional)
-                                <div class="form-check-line">
-                                    <input class="form-check-input" type="checkbox" name="optionals[]" id="optional-{{ $optional->id }}" value="{{$optional->id}}" @checked(is_array(old('optionals')) && in_array($optional->id, old('optionals')))>
-                                    <label for="" class="form-check-label text-white">{{$optional->nome}}</label>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="optionals[]"
+                                        id="optional-{{ $optional->id }}" value="{{ $optional->id }}"
+                                        @checked(is_array(old('optionals')) && in_array($optional->id, old('optionals')))>
+                                    <label for=""
+                                        class="form-check-label text-white">{{ $optional->nome }}</label>
                                 </div>
                             @endforeach
                         </div>
