@@ -102,7 +102,15 @@
                                                     <td>{{ $car->id }}</td>
                                                     <td>{{ $car->marca }}</td>
                                                     <td>{{ $car->modello }}</td>
-                                                    <td>{{ $car->prezzo }}</td>
+                                                    <td>
+                                                        @php
+                                                        $prezzo_totale = $car->prezzo;
+                                                        foreach ($car->optionals as $optional){
+                                                            $prezzo_totale += $optional->prezzo;
+                                                        }
+                                                        @endphp
+                                                        {{$prezzo_totale}}
+                                                    </td>
                                                     <td>{{ $car->alimentazione }}</td>
                                                     <td>{{ $car->cilindrata }}</td>
                                                     <td>{{ $car->cambio }}</td>
