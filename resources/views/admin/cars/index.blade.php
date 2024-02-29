@@ -128,14 +128,17 @@
                                                             nessun optional
                                                         @endforelse
                                                     </td>
-                                                    <td><a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
-                                                            class="btn btn-sm btn-primary">dettagli</a>
-                                                        <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"
-                                                            class="btn btn-sm btn-primary">modifica</a>
+                                                    <td>
+                                                        <div class="d-flex">
 
-                                                        <button class="btn btn-sm btn-danger mt-3" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_delete_{{ $car->id }}">Elimina</button>
-                                                        @include('admin.cars.modal')
+                                                            <a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
+                                                                ><button class="btn btn-sm btn-square btn-primary"><i class="fa-regular fa-eye" style="color: #ffffff;"></i></button></a>
+                                                            <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}" class="mx-1">
+                                                                <button class="btn btn-sm btn-square btn-warning" ><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a>
+                                                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                                data-bs-target="#modal_delete_{{ $car->id }}"><i class="fa-solid fa-trash" style="color:#ffffff;"></i></button>
+                                                            @include('admin.cars.modal')
+                                                        </div>
 
                                                     </td>
                                                 </tr>
