@@ -71,7 +71,7 @@
                     <div class="container-fluid vh-100">
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="text-center text-white mt-3">Le Nostre Auto</h2>
+                                <h2 class="text-center text-white mt-3">I Nostri Brand</h2>
                             </div>
                             <div class="row">
                                 <div class="col-12 table-responsive ">
@@ -79,47 +79,35 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Marca</th>
-                                                <th>Modello</th>
-                                                <th>Prezzo</th>
-                                                <th>Alimentazione</th>
-                                                <th>Cilindrata</th>
-                                                <th>Cambio</th>
-                                                <th>Porte</th>
-                                                <th>Posti</th>
+                                                <th>Nome</th>
+                                                <th>Indirizzo</th>
+                                                <th>Mail</th>
+                                                <th>Sito Web</th>
+                                                <th>Telefono</th>
                                                 <th>Tipologia</th>
-                                                <th>Stato</th>
-                                                <th>Anno_immatricolazione</th>
-                                                <th>Km</th>
-                                                <th>Immagine</th>
+                                                <th>Nazione</th>
                                                 <th>Tools</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($cars as $car)
+                                            @foreach ($brands as $brand)
                                                 <tr>
-                                                    <td>{{ $car->id }}</td>
-                                                    <td>{{ $car->marca }}</td>
-                                                    <td>{{ $car->modello }}</td>
-                                                    <td>{{ $car->prezzo }}</td>
-                                                    <td>{{ $car->alimentazione }}</td>
-                                                    <td>{{ $car->cilindrata }}</td>
-                                                    <td>{{ $car->cambio }}</td>
-                                                    <td>{{ $car->porte }}</td>
-                                                    <td>{{ $car->posti }}</td>
-                                                    <td>{{ $car->tipologia }}</td>
-                                                    <td>{{ $car->stato }}</td>
-                                                    <td>{{ $car->anno_immatricolazione }}</td>
-                                                    <td>{{ $car->km }}</td>
-                                                    <td>{{ $car->immagine }}</td>
-                                                    <td><a href="{{ route('admin.cars.show', ['car' => $car->id]) }}"
+                                                    <td>{{ $brand->id }}</td>
+                                                    <td>{{ $brand->nome }}</td>
+                                                    <td>{{ $brand->indirizzo }}</td>
+                                                    <td>{{ $brand->mail }}</td>
+                                                    <td>{{ $brand->sito_web }}</td>
+                                                    <td>{{ $brand->telefono }}</td>
+                                                    <td>{{ $brand->tipologia }}</td>
+                                                    <td>{{ $brand->nazione }}</td>
+                                                    <td><a href="{{ route('admin.brands.show', ['brand' => $brand->id]) }}"
                                                             class="btn btn-sm btn-primary">dettagli</a>
-                                                        <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"
+                                                        <a href="{{ route('admin.brands.edit', ['brand' => $brand->id]) }}"
                                                             class="btn btn-sm btn-primary">modifica</a>
 
                                                         <button class="btn btn-sm btn-danger mt-3" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_delete_{{ $car->id }}">Elimina</button>
-                                                        @include('admin.cars.modal')
+                                                            data-bs-target="#modal_delete_{{ $brand->id }}">Elimina</button>
+                                                        @include('admin.brands.modal')
 
                                                     </td>
                                                 </tr>

@@ -16,7 +16,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = brand::all();
+        return view('admin.brands.index', compact('brands'));
     }
 
     /**
@@ -26,7 +27,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.brands.create');
     }
 
     /**
@@ -37,7 +38,15 @@ class BrandController extends Controller
      */
     public function store(StoreBrandRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $brand = new brand();
+
+        $brand->fill($form_data);
+
+        $brand->save();
+
+        return redirect()->route('admin.brands.index');
     }
 
     /**
