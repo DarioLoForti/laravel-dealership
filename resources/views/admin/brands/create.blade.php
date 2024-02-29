@@ -7,7 +7,7 @@
                 <h2 class="text-center text-white my-4">Aggiungi un nuovo brand</h2>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.cars.store') }}" method="POST">
+                <form action="{{ route('admin.brands.store') }}" method="POST">
                     @csrf
                     <div class="form-group mb-3">
                         <label class="text-white" for="nome">Nome Brand</label>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="nazione">nazione</label>
-                        <input type="number" class="form-control" name="nazione" id="nazione" placeholder="nazione"
+                        <input type="text" class="form-control" name="nazione" id="nazione" placeholder="nazione"
                             value="{{ old('nazione') }}" required>
                         @error('nazione')
                             <div class="text-danger">{{ $message }}</div>

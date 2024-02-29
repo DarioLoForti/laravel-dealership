@@ -46,6 +46,8 @@ class CarController extends Controller
 
         $car = new Car();
 
+
+
         $car->fill($form_data);
 
         $car->save();

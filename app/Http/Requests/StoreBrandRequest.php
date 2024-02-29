@@ -24,7 +24,7 @@ class StoreBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|min:3|max:50|unique',
+            'nome' => 'required|min:3|max:50',
             'indirizzo' => 'required|max:150',
             'email' => 'required|email|max:150',
             'sito_web' => 'required|min:3|max:150',
@@ -33,7 +33,7 @@ class StoreBrandRequest extends FormRequest
             'nazione' => 'required|min:3|max:150',
         ];
     }
-    
+
     public function messages()
     {
         return [
