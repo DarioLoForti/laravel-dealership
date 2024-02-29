@@ -93,11 +93,13 @@
                     <div class="form-group mb-3">
                         <p class="text-white">Stato</p>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo" @checked(old('stato'))>
+                            <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo"
+                                @checked(old('stato'))>
                             <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato" @checked(old('stato'))>
+                            <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato"
+                                @checked(old('stato'))>
                             <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
@@ -133,7 +135,7 @@
                         <button class="btn btn-success" type="submit">Salva</button>
                     </div>
                 </form>
-
+                <a href="{{ route('admin.cars.index') }}" class="btn btn-primary float-end">Torna alle auto</a>
             </div>
         </div>
     </div>

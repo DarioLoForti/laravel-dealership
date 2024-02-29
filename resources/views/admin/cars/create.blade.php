@@ -146,6 +146,7 @@
                         <button class="btn btn-success" type="submit">Salva</button>
                     </div>
                 </form>
+                <a href="{{ route('admin.cars.index') }}" class="btn btn-primary float-end">Torna alle auto</a>
             </div>
         </div>
     </div>

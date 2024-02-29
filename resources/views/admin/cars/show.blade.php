@@ -15,7 +15,7 @@
                 <div>
                     @php
                         $prezzo_totale = $car->prezzo;
-                        foreach ($car->optionals as $optional){
+                        foreach ($car->optionals as $optional) {
                             $prezzo_totale += $optional->prezzo;
                         }
                     @endphp
@@ -69,7 +69,9 @@
                         </h5>
                     </div>
                 @endif
+
             </div>
+            <a href="{{ route('admin.cars.index') }}" class="btn btn-primary float-end">Torna alle auto</a>
         </div>
     </div>
 @endsection
