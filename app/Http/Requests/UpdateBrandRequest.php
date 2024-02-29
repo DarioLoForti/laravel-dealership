@@ -37,7 +37,17 @@ class UpdateBrandRequest extends FormRequest
     public function messages()
     {
         return [
-            
+            'nome.required' => 'Il nome è obbligatorio!',
+            'nome.min' => 'Il nome non può essere più corto di 3 caratteri.',
+            'nome.max' => 'Il nome non può essere più lungo di 30 caratteri.',
+            'email.required' => 'La mail è obbligatoria!',
+            'email.email' => 'La mail deve essere in formato email! (Contenere un @ e un indirizzo valido dopo.)',
+            'sito_web.required' => 'Il sito web è obbligatorio!',
+            'sito_web.min' => 'Il sito web non può essere più corto di 3 caratteri.',
+            'sito_web.max' => 'Il sito web non può essere più lungo di 30 caratteri.',
+            'nazione.required' => 'La nazione è obbligatorio!',
+            'nazione.min' => 'La nazione non può essere più corto di 3 caratteri.',
+            'nazione.max' => 'La nazione non può essere più lungo di 30 caratteri.',
         ];
     }
 }
