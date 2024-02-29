@@ -13,7 +13,7 @@ class UpdateBrandRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class UpdateBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome' => 'required|min:3|max:30',
+            'indirizzo' => 'required',
+            'email' => 'required|email',
+            'sito_web' => 'required',
+            'telefono' => 'required|min:3|max:20',
+            'tipologia' => 'required|min:3|max:30',
+            'nazione' => 'required|min:3|max:30',
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            
         ];
     }
 }
