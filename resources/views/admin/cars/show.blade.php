@@ -7,7 +7,8 @@
                 <h1 class="text-white">{{ ucwords($car->modello) }}</h1>
             </div>
             <div class="col-12 d-flex">
-                <img src=" {{ $car->immagine }} ">
+                <img width="400
+                px" src=" {{ $car->immagine }} ">
                 <div>
                     <h5 class="text-white mx-2">Marca: {{ $car->marca }}</h5>
                 </div>
@@ -51,8 +52,8 @@
                 @endif
                 @if ($car->optionals)
                     <div>
-                        
-                        <h5 class="text-white mx-2">Optional: 
+
+                        <h5 class="text-white mx-2">Optional:
                             <br>
                             @forelse ($car->optionals as $optional)
                                 {{ $optional->nome }} <br>
