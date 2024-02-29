@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\Admin\CarController as CarController;
+use App\Http\Controllers\Admin\BrandController as BrandController;
+use App\Http\Controllers\Admin\OptionalController as OptionalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/cars', CarController::class);
+    Route::resource('/brands', BrandController::class);
+    Route::resource('/optionals', OptionalController::class);
 });
 
 // Route::get('/dashboard', function () {

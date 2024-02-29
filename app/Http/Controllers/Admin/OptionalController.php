@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Optional\Admin;
+use App\Models\Optional;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOptionalRequest;
 use App\Http\Requests\UpdateOptionalRequest;
 
