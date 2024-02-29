@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nome', 'indirizzo', 'email', 'sito_web', 'telefono', 'tipologia', 'nazione'];
 }
