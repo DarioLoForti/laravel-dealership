@@ -36,7 +36,7 @@ class StoreCarRequest extends FormRequest
             'stato' => 'required|max:20',
             'anno_immatricolazione' => 'date|nullable',
             'km' => 'nullable',
-            'immagine' => 'max:255',
+            'immagine' => 'nullable|max:255',
 
         ];
     }
@@ -66,7 +66,7 @@ class StoreCarRequest extends FormRequest
             'anno_immatricolazione.dateformat' => 'La data deve essere nel formato Y-M-D',
             'anno_immatricolazione.integer' => 'Deve essere un numero',
             'km.required' => 'I kilometri sono obbligatori',
-            'immagine.max' => 'Il link dell\' immagine può contenere al massimo 255 caratteri' 
+            'immagine.max' => 'Il link dell\' immagine può contenere al massimo 255 caratteri'
 
         ];
     }
