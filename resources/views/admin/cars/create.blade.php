@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="alimentazione">Alimentazione</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="alimentazione" class="form-select" aria-label="Default select example">
                             <option>Scegli alimentazione</option>
                             <option value="Benzina">Benzina</option>
                             <option value="Metano">Metano</option>
@@ -88,7 +88,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label for="stato">Stato</label>
+                        <label class="text-white" for="stato">Stato</label>
                         <input type="text" class="form-control" name="stato" id="stato" placeholder="Stato"
                             value="{{ old('stato') }}">
                         @error('stato')
@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="anno_immatricolazione">Immatricolazione</label>
-                        <input type="text" class="form-control" name="anno_immatricolazione"
+                        <input type="date" class="form-control" name="anno_immatricolazione"
                             id="anno_immatricolazione" placeholder="Immatricolazione"
                             value="{{ old('anno_immatricolazione') }}">
                         @error('anno_immatricolazione')

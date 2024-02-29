@@ -37,7 +37,7 @@
                     <div class="form-group mb-3">
                         <label class="text-white" for="alimentazione">Alimentazione</label>
 
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="alimentazione" class="form-select" aria-label="Default select example">
                             <option selected>Scegli alimentazione</option>
                             <option value="benzina" @selected(old('alimentazione', $car->alimentazione) == 'benzina')>Benzina</option>
                             <option value="metano" @selected(old('alimentazione', $car->alimentazione) == 'metano')>Metano</option>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="cambio">Cambio</label>
-                        <input type="number" class="form-control" name="cambio" id="cambio" placeholder="Cambio"
+                        <input type="text" class="form-control" name="cambio" id="cambio" placeholder="Cambio"
                             value="{{ $car->cambio }}">
                         @error('cambio')
                             <div class="text-danger">{{ $message }}</div>
