@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 
+use App\Models\Optional;
+
 class CarController extends Controller
 {
     /**
@@ -27,7 +29,9 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('admin.cars.create');
+        $optionals = Optional::all();
+
+        return view('admin.cars.create', compact('optionals'));
     }
 
     /**
@@ -45,6 +49,10 @@ class CarController extends Controller
         $car->fill($form_data);
 
         $car->save();
+
+        if ($request->has('optionals')) {
+            $car->optionals()->attach($form_data['optionals']);
+        }
 
         return redirect()->route('admin.cars.index');
     }
