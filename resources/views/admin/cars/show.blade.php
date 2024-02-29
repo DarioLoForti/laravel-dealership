@@ -49,6 +49,19 @@
                         <h5 class="text-white mx-2">Posti: {{ $car->posti }}</h5>
                     </div>
                 @endif
+                @if ($car->optionals)
+                    <div>
+                        
+                        <h5 class="text-white mx-2">Optional: 
+                            <br>
+                            @forelse ($car->optionals as $optional)
+                                {{ $optional->nome }} <br>
+                            @empty
+                                Nessun optional
+                            @endforelse
+                        </h5>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
