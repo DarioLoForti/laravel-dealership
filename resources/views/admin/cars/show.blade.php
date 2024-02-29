@@ -12,7 +12,13 @@
                     <h5 class="text-white mx-2">Marca: {{ $car->marca }}</h5>
                 </div>
                 <div>
-                    <h5 class="text-white mx-2">Prezzo: {{ $car->prezzo * 1000 }} $</h5>
+                    @php
+                        $prezzo_totale = $car->prezzo;
+                        foreach ($car->optionals as $optional){
+                            $prezzo_totale += $optional->prezzo;
+                        }
+                    @endphp
+                    <h5 class="text-white mx-2">Prezzo: {{ $prezzo_totale }} $</h5>
                 </div>
                 <div>
                     <h5 class="text-white mx-2">Alimentazione: {{ $car->alimentazione }}</h5>
