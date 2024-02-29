@@ -20,6 +20,7 @@ class CarSeeder extends Seeder
             $newCar = new Car;
 
             $newCar->marca=$faker->word();
+            $newCar->brand_id=random_int(1, 10);
             $newCar->modello=$faker->words(2, true);
             $newCar->prezzo=$faker->randomFloat(2, 5, 50);
             $newCar->alimentazione=$faker->randomElement(['Diesel', 'Benzina', 'Elettrica', 'GPL', 'Batteria', 'Ibrido']);

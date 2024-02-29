@@ -93,12 +93,12 @@
                     <div class="form-group mb-3">
                         <p class="text-white">Stato</p>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="stato" id="stato1">
-                            <label for="stato1" class="form-check-label text-white" value="nuovo" @checked(old('stato'))>Nuova</label><br>
+                            <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo" @checked(old('stato'))>
+                            <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="stato" id="stato2">
-                            <label for="stato2" class="form-check-label text-white" value="usato" @checked(old('stato'))>Usata</label><br>
+                            <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato" @checked(old('stato'))>
+                            <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
                             <div class="text-danger">{{ $message }}</div>
