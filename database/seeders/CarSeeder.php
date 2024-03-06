@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Car as Car;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 class CarSeeder extends Seeder
 {
