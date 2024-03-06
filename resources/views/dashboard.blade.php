@@ -38,6 +38,14 @@
                                                         <span class="d-none d-sm-inline">Aggiungi Nuova
                                                             Automobile</span></a>
                                                 </li>
+                                                <li class="w-100">
+                                                    <a href="{{ route('admin.brands.index') }}" class="nav-link px-0">
+                                                        <span class="d-none d-sm-inline">Raccolta Brand</span></a>
+                                                </li>
+                                                <li class="w-100">
+                                                    <a href="{{ route('admin.brands.create') }}" class="nav-link px-0">
+                                                        <span class="d-none d-sm-inline">Aggiungi nuovo Brand</span></a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
