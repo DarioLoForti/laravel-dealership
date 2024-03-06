@@ -55,7 +55,7 @@ class CarController extends Controller
 
         $car->fill($form_data);
 
-        $car->slug = Str::slug($form_data['modello'], '-') . '-' . $form_data['id'];
+        $car->slug = Str::slug($form_data['modello'], '-');
         $car->save();
 
         if ($request->has('optionals')) {
@@ -105,11 +105,15 @@ class CarController extends Controller
             }
 
             $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
-            $form_data['image'] = $image_path;
+            $form_data['image'] = $immagine_path;
         }
 
-        $car->slug = Str::slug($form_data['modello'], '-') . '-' . $form_data['id'];
+        $car->slug = Str::slug($form_data['modello'], '-');
         $car->update($form_data);
+
+        if ($request->has('optionals')) {
+            $car->optionals()->attach($form_data['optionals']);
+        }
 
         return redirect()->route('admin.cars.index');
     }
