@@ -9,7 +9,8 @@ use App\Models\Car;
 
 class CarController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $cars = Car::all();
 
         return response()->json([
@@ -18,16 +19,16 @@ class CarController extends Controller
         ]);
     }
 
-    public function show($slug){
-        $car = Car::all()->where('slug', $slug);
+    public function show($slug)
+    {
+        $car = Car::with(['optionals'])->where('slug', $slug)->first();
 
-        if($car){
+        if ($car) {
             return response()->json([
                 'success' => true,
                 'response' => $car
             ]);
-        }
-        else{
+        } else {
             return response()->json([
                 'success' => false,
                 'response' => 'No project found matching query.'
