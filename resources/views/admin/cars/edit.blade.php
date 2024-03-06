@@ -124,9 +124,20 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-white" for="immagine">Url immagine</label>
+                        @if($car->immagine != null)
+                        <div>
+                            <img src="{{ asset('storage/'.$car->immagine)}}">
+                        </div>
+                        @endif
+
+                        {{-- <label class="text-white" for="immagine">Url immagine</label>
+
                         <input type="text" class="form-control" name="immagine" id="immagine"
-                            placeholder="Url immagine" value="{{ $car->immagine }}">
+                            placeholder="Url immagine" value="{{ $car->immagine }}"> --}}
+
+                        <label for="immagine">Immagine Auto:</label>
+                        <input type="file" name="immagine" id="immagine" class="form-control">
+
                         @error('immagine')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

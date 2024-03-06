@@ -20,7 +20,7 @@
                     </div>
                     
                     <div class="form-group mb-3">
-                        <label class="text-white" for="indirizzo">Indirizzo:</label>
+                        <label class="text-white" for="indirizzo">Indirizzo</label>
                         <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Sede del Brand"
                             value="{{ $brand->indirizzo }}">
                         @error('indirizzo')
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label class="text-white" for="telefono">telefono</label>
+                        <label class="text-white" for="telefono">Telefono</label>
                         <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Numero di Telefono del Brand"
                             value="{{ $brand->telefono }}">
                         @error('telefono')

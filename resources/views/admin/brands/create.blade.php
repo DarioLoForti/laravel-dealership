@@ -18,7 +18,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-white" for="indirizzo">indirizzo</label>
+                        <label class="text-white" for="indirizzo">Indirizzo</label>
                         <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="indirizzo"
                             value="{{ old('indirizzo') }}" required>
                         @error('indirizzo')
@@ -26,7 +26,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-4">
-                        <label class="text-white" for="mail">mail</label>
+                        <label class="text-white" for="mail">Mail</label>
                         <input type="text" class="form-control" name="mail" id="mail" placeholder="mail"
                             value="{{ old('mail') }}" required>
                         @error('mail')
@@ -34,7 +34,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-4">
-                        <label class="text-white" for="sito_web">sito_web</label>
+                        <label class="text-white" for="sito_web">Sito Web</label>
                         <input type="text" class="form-control" name="sito_web" id="sito_web" placeholder="sito_web"
                             value="{{ old('sito_web') }}" required>
                         @error('sito_web')
@@ -42,7 +42,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-white" for="telefono">telefono</label>
+                        <label class="text-white" for="telefono">Telefono</label>
                         <input type="text" class="form-control" name="telefono" id="telefono" placeholder="telefono"
                             value="{{ old('telefono') }}" required>
                         @error('telefono')
@@ -50,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-white" for="tipologia">tipologia</label>
+                        <label class="text-white" for="tipologia">Tipologia</label>
                         <input type="text" class="form-control" name="tipologia" id="tipologia" placeholder="tipologia"
                             value="{{ old('tipologia') }}" required>
                         @error('tipologia')
@@ -58,7 +58,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="text-white" for="nazione">nazione</label>
+                        <label class="text-white" for="nazione">Nazione</label>
                         <input type="text" class="form-control" name="nazione" id="nazione" placeholder="nazione"
                             value="{{ old('nazione') }}" required>
                         @error('nazione')

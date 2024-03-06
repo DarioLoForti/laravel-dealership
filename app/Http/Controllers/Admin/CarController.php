@@ -46,7 +46,10 @@ class CarController extends Controller
 
         $car = new Car();
 
-
+        if($request->hasFile('immagine')){
+            $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
+            $form_data['image'] = $image_path;
+        }
 
         $car->fill($form_data);
 
@@ -92,6 +95,15 @@ class CarController extends Controller
     {
         $form_data = $request->all();
 
+        if($request->hasFile('immagine')){
+            if($car->immagine != null){
+                Storage::disk('public')->delete($car->immagine);
+            }
+
+            $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
+            $form_data['image'] = $image_path;
+        }
+
         $car->update($form_data);
 
         return redirect()->route('admin.cars.index');
@@ -105,6 +117,10 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
+        if($car->immagine != null){
+            Storage::disk('public')->delete($car->immagine);
+        }
+
         $car->delete();
         return redirect()->route('admin.cars.index');
     }
