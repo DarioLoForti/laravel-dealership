@@ -124,10 +124,10 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        @if($car->immagine != null)
-                        <div>
-                            <img src="{{ asset('storage/'.$car->immagine)}}">
-                        </div>
+                        @if ($car->immagine != null)
+                            <div>
+                                <img src="{{ asset('storage/' . $car->immagine) }}">
+                            </div>
                         @endif
 
                         {{-- <label class="text-white" for="immagine">Url immagine</label>
@@ -141,6 +141,20 @@
                         @error('immagine')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="" class="control-label text-white ">Seleziona optional</label>
+                        <div>
+                            @foreach ($optionals as $optional)
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="optionals[]"
+                                        id="optional-{{ $optional->id }}" value="{{ $optional->id }}"
+                                        @checked(is_array(old('optionals')) && in_array($optional->id, old('optionals')))>
+                                    <label for=""
+                                        class="form-check-label text-white">{{ $optional->nome }}</label>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                     <div class="form-group my-3">
                         <button class="btn btn-success" type="submit">Salva</button>

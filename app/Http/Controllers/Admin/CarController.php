@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Optional;
 
@@ -47,14 +48,14 @@ class CarController extends Controller
 
         $car = new Car();
 
-        if($request->hasFile('immagine')){
+        if ($request->hasFile('immagine')) {
             $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
-            $form_data['image'] = $image_path;
+            $form_data['image'] = $immagine_path;
         }
 
         $car->fill($form_data);
-        
-        $car->slug = Str::slug($form_data['modello'], '-').'-'.$form_data['id'];
+
+        $car->slug = Str::slug($form_data['modello'], '-') . '-' . $form_data['id'];
         $car->save();
 
         if ($request->has('optionals')) {
@@ -83,7 +84,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view('admin.cars.edit', compact('car'));
+        $optionals = Optional::all();
+        return view('admin.cars.edit', compact('car', 'optionals'));
     }
 
     /**
@@ -97,8 +99,8 @@ class CarController extends Controller
     {
         $form_data = $request->all();
 
-        if($request->hasFile('immagine')){
-            if($car->immagine != null){
+        if ($request->hasFile('immagine')) {
+            if ($car->immagine != null) {
                 Storage::disk('public')->delete($car->immagine);
             }
 
@@ -106,7 +108,7 @@ class CarController extends Controller
             $form_data['image'] = $image_path;
         }
 
-        $car->slug = Str::slug($form_data['modello'], '-').'-'.$form_data['id'];
+        $car->slug = Str::slug($form_data['modello'], '-') . '-' . $form_data['id'];
         $car->update($form_data);
 
         return redirect()->route('admin.cars.index');
@@ -120,7 +122,7 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        if($car->immagine != null){
+        if ($car->immagine != null) {
             Storage::disk('public')->delete($car->immagine);
         }
 
