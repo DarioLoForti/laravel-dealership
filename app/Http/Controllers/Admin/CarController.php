@@ -6,6 +6,7 @@ use App\Models\Car;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
+use Illuminate\Support\Str;
 
 use App\Models\Optional;
 
@@ -52,7 +53,8 @@ class CarController extends Controller
         }
 
         $car->fill($form_data);
-
+        
+        $car->slug = Str::slug($form_data['modello'], '-').'-'.$form_data['id'];
         $car->save();
 
         if ($request->has('optionals')) {
@@ -104,6 +106,7 @@ class CarController extends Controller
             $form_data['image'] = $image_path;
         }
 
+        $car->slug = Str::slug($form_data['modello'], '-').'-'.$form_data['id'];
         $car->update($form_data);
 
         return redirect()->route('admin.cars.index');
