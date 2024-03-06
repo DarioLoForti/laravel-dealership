@@ -10,7 +10,8 @@ class Car extends Model
     use HasFactory;
     protected $fillable = ['marca', 'modello', 'prezzo', 'alimentazione', 'cilindrata', 'cambio', 'porte', 'posti', 'tipologia', 'stato', 'anno_immatricolazione', 'km', 'immagine'];
 
-    public function optionals(){
+    public function optionals()
+    {
         return $this->belongsToMany(Optional::class);
     }
 }
