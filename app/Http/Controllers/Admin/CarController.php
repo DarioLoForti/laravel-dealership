@@ -50,7 +50,7 @@ class CarController extends Controller
 
         if ($request->hasFile('immagine')) {
             $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
-            $form_data['image'] = $immagine_path;
+            $form_data['immagine'] = $immagine_path;
         }
 
         $car->fill($form_data);
@@ -103,10 +103,10 @@ class CarController extends Controller
             if ($car->immagine != null) {
                 Storage::disk('public')->delete($car->immagine);
             }
-
             $immagine_path = Storage::disk('public')->put('cars_images', $form_data['immagine']);
-            $form_data['image'] = $immagine_path;
+            $form_data['immagine'] = $immagine_path;
         }
+
 
         $car->slug = Str::slug($form_data['modello'], '-');
         $car->update($form_data);

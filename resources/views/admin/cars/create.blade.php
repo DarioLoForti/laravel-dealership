@@ -7,7 +7,7 @@
                 <h2 class="text-center text-white my-4">Aggiungi una nuova auto</h2>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.cars.store') }}" method="POST">
+                <form action="{{ route('admin.cars.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group mb-3">
                         <label class="text-white" for="marca">Marca d'auto</label>
@@ -125,10 +125,10 @@
 
                         <input type="text" class="form-control" name="immagine" id="immagine"
                             placeholder="Url immagine" value="{{ old('immagine') }}"> --}}
-                        
+
                         <label for="immagine">Immagine Auto:</label>
                         <input type="file" name="immagine" id="immagine" class="form-control">
-                        
+
                         @error('immagine')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

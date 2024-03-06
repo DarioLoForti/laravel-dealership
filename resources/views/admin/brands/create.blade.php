@@ -7,7 +7,7 @@
                 <h2 class="text-center text-white my-4">Aggiungi un nuovo brand</h2>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.brands.store') }}" method="POST">
+                <form action="{{ route('admin.brands.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group mb-3">
                         <label class="text-white" for="nome">Nome Brand</label>
