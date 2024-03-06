@@ -34,6 +34,7 @@ class CarSeeder extends Seeder
             $newCar->km=1000*$faker->numberBetween(10, 1000);
             $names=explode(' ', $newCar->modello);
             $newCar->immagine=$faker->imageUrl(360, 360, $names[0], true, $names[1], true);
+            $newCar->slug = Str::slug($newCar->modello, '-').'-'.$newCar->id;
 
             $newCar->save();
         }
