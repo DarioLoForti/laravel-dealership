@@ -100,15 +100,15 @@
                                                     <td>{{ $brand->telefono }}</td>
                                                     <td>{{ $brand->tipologia }}</td>
                                                     <td>{{ $brand->nazione }}</td>
-                                                    <td><a href="{{ route('admin.brands.show', ['brand' => $brand->id]) }}"
-                                                            class="btn btn-sm btn-primary">dettagli</a>
-                                                        <a href="{{ route('admin.brands.edit', ['brand' => $brand->id]) }}"
-                                                            class="btn btn-sm btn-primary">modifica</a>
-
-                                                        <button class="btn btn-sm btn-danger mt-3" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_delete_{{ $brand->id }}">Elimina</button>
-                                                        @include('admin.brands.modal')
-
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <a href="{{ route('admin.brands.edit', ['brand' => $brand->id]) }}" class="mx-1">
+                                                                <button class="btn btn-sm btn-square btn-warning" ><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a>
+                                                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#modal_delete_{{ $brand->id }}"><i class="fa-solid fa-trash" style="color:#ffffff;"></i></button>
+                                                            @include('admin.brands.modal')
+                                                        </div>
+                                                        
                                                     </td>
                                                 </tr>
                                             @endforeach
