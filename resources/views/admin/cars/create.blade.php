@@ -12,8 +12,9 @@
                     <div class="form-group mb-3">
                         <select name="brand_id" class="form-select">
                             <option selected>Scegli marca</option>
-                            @foreach($brands as $brand)
-                                <option value="{{$brand->id}}" @selected(old('brand_id', $car->brand_id) == $brand->id)>{{$brand->nome}}</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}" @selected(old('brand_id') == $brand->id)>{{ $brand->nome }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -91,13 +92,11 @@
                         <p class="text-white">Stato</p>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo"
-                                {{ ($car->stato=="nuovo")? "checked" : "" }} >
-                            <label for="stato1" class="form-check-label text-white">Nuova</label><br>
+                                <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato"
-                                {{ ($car->stato=="usato")? "checked" : "" }} >
-                            <label for="stato2" class="form-check-label text-white">Usata</label><br>
+                                <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
                             <div class="text-danger">{{ $message }}</div>
