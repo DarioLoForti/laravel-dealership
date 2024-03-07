@@ -10,7 +10,7 @@
                 <form action="{{ route('admin.cars.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group mb-3">
-                        <label class="text-white" for="marca">Marca d'auto</label>
+                        <label class="text-white" for="marca">Marca d'auto </label>
                         <input type="text" class="form-control" name="marca" id="marca" placeholder="Marca d'auto"
                             value="{{ old('marca') }}">
                         @error('marca')
