@@ -17,9 +17,8 @@
                                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                                         id="menu">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link align-middle px-0">
-                                                <i class="fs-4 bi-house"></i> <span
-                                                    class="ms-1 d-none d-sm-inline">Home</span>
+                                            <a class="nav-link align-middle px-0" href="{{ url('/') }}">{{ __('Home') }}
+                                                
                                             </a>
                                         </li>
                                         <li>
@@ -41,6 +40,13 @@
                                             <a href="{{ route('admin.brands.create') }}" class="nav-link px-0">
                                                 <span class="d-none d-sm-inline">Aggiungi nuovo Brand</span></a>
                                         </li>
+                                        <li class="w-100">
+                                            <a href="{{ route('admin.optionals.index') }}" class="nav-link px-0">
+                                                <span class="d-none d-sm-inline">Elenco Optionals</span></a>
+                                        </li>
+                                        <li class="w-100">
+                                            <a href="{{ route('admin.optionals.create') }}" class="nav-link px-0">
+                                                <span class="d-none d-sm-inline">Aggiungi nuovo Optional</span></a>
                                         </li>
                                     </ul>
                                     <hr>
@@ -85,14 +91,11 @@
                                                 <th>Alimentazione</th>
                                                 <th>Cilindrata</th>
                                                 <th>Cambio</th>
-                                                <th>Porte</th>
-                                                <th>Posti</th>
+                    
                                                 <th>Tipologia</th>
                                                 <th>Stato</th>
-                                                <th>Anno_immatricolazione</th>
                                                 <th>Km</th>
-                                                <th>Immagine</th>
-                                                <th>Optional</th>
+                                                
                                                 <th>Tools</th>
                                             </tr>
                                         </thead>
@@ -114,20 +117,10 @@
                                                     <td>{{ $car->alimentazione }}</td>
                                                     <td>{{ $car->cilindrata }}</td>
                                                     <td>{{ $car->cambio }}</td>
-                                                    <td>{{ $car->porte }}</td>
-                                                    <td>{{ $car->posti }}</td>
                                                     <td>{{ $car->tipologia }}</td>
                                                     <td>{{ $car->stato }}</td>
-                                                    <td>{{ $car->anno_immatricolazione }}</td>
                                                     <td>{{ $car->km }}</td>
-                                                    <td>{{ Str::limit($car->immagine, 20, '...') }}</td>
-                                                    <td>
-                                                        @forelse ($car->optionals as $optional)
-                                                            #{{ $optional->nome }}
-                                                        @empty
-                                                            nessun optional
-                                                        @endforelse
-                                                    </td>
+                                                
                                                     <td>
                                                         <div class="d-flex">
 

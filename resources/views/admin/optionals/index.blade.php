@@ -77,7 +77,7 @@
                     <div class="container-fluid vh-100">
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="text-center text-white mt-3">I Nostri Brand</h2>
+                                <h2 class="text-center text-white mt-3">Le Nostre Auto</h2>
                             </div>
                             <div class="row">
                                 <div class="col-12 table-responsive ">
@@ -85,36 +85,34 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Nome</th>
-                                                <th>Indirizzo</th>
-                                                <th>Mail</th>
-                                                <th>Sito Web</th>
-                                                <th>Telefono</th>
-                                                <th>Tipologia</th>
-                                                <th>Nazione</th>
-                                                <th>Tools</th>
+                                                <th>NOME</th>
+                                                <th>DESCRIZIONE</th>
+                                                <th>PREZZO</th>
+                                                <th>TOOLS</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($brands as $brand)
+                                            @foreach ($optionals as $optional)
                                                 <tr>
-                                                    <td>{{ $brand->id }}</td>
-                                                    <td>{{ $brand->nome }}</td>
-                                                    <td>{{ $brand->indirizzo }}</td>
-                                                    <td>{{ $brand->mail }}</td>
-                                                    <td>{{ $brand->sito_web }}</td>
-                                                    <td>{{ $brand->telefono }}</td>
-                                                    <td>{{ $brand->tipologia }}</td>
-                                                    <td>{{ $brand->nazione }}</td>
+                                                    <td>{{ $optional->id }}</td>
+                                                    <td>{{ $optional->nome }}</td>
+                                                    <td> {{ Str::limit($optional->descrizione, 40, '...') }}</td>
+                                                    <td>&euro;{{ $optional->prezzo }}</td>
+                                                
                                                     <td>
                                                         <div class="d-flex">
-                                                            <a href="{{ route('admin.brands.edit', ['brand' => $brand->id]) }}" class="mx-1">
-                                                                <button class="btn btn-sm btn-square btn-warning" ><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a>
+                                                            <a href="{{ route('admin.optionals.edit', ['optional' => $optional->id]) }}"
+                                                                class="mx-1">
+                                                                <button class="btn btn-sm btn-square btn-warning"><i
+                                                                        class="fa-regular fa-pen-to-square"
+                                                                        style="color: #ffffff;"></i></button></a>
                                                             <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                                            data-bs-target="#modal_delete_{{ $brand->id }}"><i class="fa-solid fa-trash" style="color:#ffffff;"></i></button>
-                                                            @include('admin.brands.modal')
+                                                                data-bs-target="#modal_delete_{{ $optional->id }}"><i
+                                                                    class="fa-solid fa-trash"
+                                                                    style="color:#ffffff;"></i></button>
+                                                            @include('admin.optionals.modal')
                                                         </div>
-                                                        
+
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -31,11 +31,11 @@ class StoreOptionalRequest extends FormRequest
     }
     public function messages(){
         return[
-            'nome.required'=> 'Il nome è obbligatorio'
-            'nome.max'=> 'Il nome puo contenere al massimo 100 caratteri'
-            'descrizione.required' => 'La descrizione è obbligatorio'
-            'prezzo.required' => 'Il prezzo è obbligatorio'
+            'nome.required'=> 'Il nome è obbligatorio',
+            'nome.max'=> 'Il nome puo contenere al massimo 100 caratteri',
+            'descrizione.required' => 'La descrizione è obbligatorio',
+            'prezzo.required' => 'Il prezzo è obbligatorio',
             'descrizione.required' => 'Il prezzo deve avere due cifre decimali',
-        ]
+        ];
     }
 }
