@@ -11,7 +11,7 @@ class CarController extends Controller
 {
     public function index()
     {
-        $cars = Car::all();
+        $cars = Car::with(['optionals'])->paginate(6);
 
         return response()->json([
             'success' => true,
