@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\CarController as CarController;
+use App\Http\Controllers\Api\BrandController as BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ use App\Http\Controllers\Api\CarController as CarController;
 Route::get('/cars', [CarController::class, 'index']);
 
 Route::get('/cars/{slug}', [CarController::class, 'show']);
+
+Route::get('/brands', [BrandController::class, 'index']);
+
+Route::get('/brands/{id}', [BrandController::class, 'show']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
