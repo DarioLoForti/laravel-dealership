@@ -104,7 +104,7 @@
                                             @foreach ($cars as $car)
                                                 <tr>
                                                     <td>{{ $car->id }}</td>
-                                                    <td>{{ $car->brand_id }}</td>
+                                                    <td>{{ $car->brand->nome }}</td>
                                                     <td>{{ $car->modello }}</td>
                                                     <td>
                                                         @php

@@ -20,6 +20,9 @@
                     <h5 class="text-white mx-2">Prezzo: {{ $prezzo_totale }} €</h5>
                 </div>
                 <div>
+                    <span class="text-white mx-2">Marca: {{ $car->brand->nome }}</span>
+                </div>
+                <div>
                     <span class="text-white mx-2">Alimentazione: {{ $car->alimentazione }}</span>
                 </div>
                 <div>
