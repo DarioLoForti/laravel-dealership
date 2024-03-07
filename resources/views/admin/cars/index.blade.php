@@ -95,7 +95,7 @@
 
                                                 <th>Tipologia</th>
                                                 <th>Stato</th>
-                                                <th>Km</th>
+
 
                                                 <th>Tools</th>
                                             </tr>
@@ -104,7 +104,9 @@
                                             @foreach ($cars as $car)
                                                 <tr>
                                                     <td>{{ $car->id }}</td>
-                                                    <td>{{ $car->brand->nome }}</td>
+                                                    @if ($car->brand_id != null)
+                                                        <td>{{ $car->brand->nome }}</td>
+                                                    @endif
                                                     <td>{{ $car->modello }}</td>
                                                     <td>
                                                         @php
@@ -120,7 +122,6 @@
                                                     <td>{{ $car->cambio }}</td>
                                                     <td>{{ $car->tipologia }}</td>
                                                     <td>{{ $car->stato }}</td>
-                                                    <td>{{ $car->km }}</td>
 
                                                     <td>
                                                         <div class="d-flex">

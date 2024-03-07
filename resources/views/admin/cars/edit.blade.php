@@ -7,14 +7,15 @@
                 <h2 class="text-center text-white my-4">Modifica un auto</h2>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.cars.update', $car->id) }}" method="POST">
+                <form action="{{ route('admin.cars.update', $car->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
                         <select name="brand_id" class="form-select">
                             <option selected>Scegli marca</option>
-                            @foreach($brands as $brand)
-                                <option value="{{$brand->id}}" @selected(old('brand_id', $car->brand_id) == $brand->id)>{{$brand->nome}}</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}" @selected(old('brand_id', $car->brand_id) == $brand->id)>{{ $brand->nome }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -94,12 +95,12 @@
                         <p class="text-white">Stato</p>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo"
-                                {{ ($car->stato=="nuovo")? "checked" : "" }} >
+                                {{ $car->stato == 'nuovo' ? 'checked' : '' }}>
                             <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato"
-                                {{ ($car->stato=="usato")? "checked" : "" }} >
+                                {{ $car->stato == 'usato' ? 'checked' : '' }}>
                             <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
