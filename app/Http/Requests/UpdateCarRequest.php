@@ -24,7 +24,6 @@ class UpdateCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'marca' => 'required|max:50',
             'modello' => 'required|max:50',
             'prezzo' => 'required|decimal:2',
             'alimentazione' => 'required|max:50',
@@ -37,15 +36,12 @@ class UpdateCarRequest extends FormRequest
             'anno_immatricolazione' => 'date|nullable',
             'km' => 'nullable',
             'immagine' => 'max:255|nullable',
-
         ];
     }
 
     public function messages()
     {
         return [
-            'marca.required' => 'Il nome della marca è obbligatoria',
-            'marca.max'     => 'Il nome della marca può contenere al massimo 50 caratteri',
             'modello.required'     => 'Il nome dell\'modello è obbligatorio',
             'modello.max'     => 'Il nome dell\'modello può contenere al massimo 50 caratteri',
             'prezzo.required' => 'Il prezzo è obbligatorio',
@@ -67,7 +63,6 @@ class UpdateCarRequest extends FormRequest
             'anno_immatricolazione.integer' => 'Deve essere un numero',
             'km.required' => 'I kilometri sono obbligatori',
             'immagine.max' => 'Il link dell\' immagine può contenere al massimo 255 caratteri'
-
         ];
     }
 }

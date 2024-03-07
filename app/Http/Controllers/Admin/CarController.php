@@ -8,8 +8,8 @@ use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-
 use App\Models\Optional;
+use App\Models\Brand;
 
 class CarController extends Controller
 {
@@ -32,8 +32,9 @@ class CarController extends Controller
     public function create()
     {
         $optionals = Optional::all();
+        $brands = Brand::all();
 
-        return view('admin.cars.create', compact('optionals'));
+        return view('admin.cars.create', compact('optionals', 'brands'));
     }
 
     /**
@@ -85,7 +86,9 @@ class CarController extends Controller
     public function edit(Car $car)
     {
         $optionals = Optional::all();
-        return view('admin.cars.edit', compact('car', 'optionals'));
+        $brands = Brand::all();
+
+        return view('admin.cars.edit', compact('car', 'optionals', 'brands'));
     }
 
     /**
