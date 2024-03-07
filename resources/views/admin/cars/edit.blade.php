@@ -11,12 +11,12 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
-                        <label class="text-white" for="marca">Marca d'auto</label>
-                        <input type="text" class="form-control" name="marca" id="marca" placeholder="Marca d'auto"
-                            value="{{ $car->marca }}">
-                        @error('marca')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        <select name="brand_id" class="form-select">
+                            <option selected>Scegli marca</option>
+                            @foreach($brands as $brand)
+                                <option value="{{$brand->id}}" @selected(old('brand_id', $car->brand_id) == $brand->id)>{{$brand->nome}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group mb-3">
                         <label class="text-white" for="modello">Modello</label>
@@ -37,7 +37,7 @@
                     <div class="form-group mb-3">
                         <label class="text-white" for="alimentazione">Alimentazione</label>
 
-                        <select name="alimentazione" class="form-select" aria-label="Default select example">
+                        <select name="alimentazione" class="form-select">
                             <option selected>Scegli alimentazione</option>
                             <option value="benzina" @selected(old('alimentazione', $car->alimentazione) == 'benzina')>Benzina</option>
                             <option value="metano" @selected(old('alimentazione', $car->alimentazione) == 'metano')>Metano</option>
@@ -94,12 +94,12 @@
                         <p class="text-white">Stato</p>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo"
-                                @checked(old('stato'))>
+                                {{ ($car->stato=="nuovo")? "checked" : "" }} >
                             <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato"
-                                @checked(old('stato'))>
+                                {{ ($car->stato=="usato")? "checked" : "" }} >
                             <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
