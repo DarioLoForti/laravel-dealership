@@ -91,12 +91,12 @@
                         <p class="text-white">Stato</p>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato1" value="nuovo"
-                                @checked(old('stato'))>
+                                {{ ($car->stato=="nuovo")? "checked" : "" }} >
                             <label for="stato1" class="form-check-label text-white">Nuova</label><br>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="stato" id="stato2" value="usato"
-                                @checked(old('stato'))>
+                                {{ ($car->stato=="usato")? "checked" : "" }} >
                             <label for="stato2" class="form-check-label text-white">Usata</label><br>
                         </div>
                         @error('stato')
