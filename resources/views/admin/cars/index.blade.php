@@ -17,8 +17,9 @@
                                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                                         id="menu">
                                         <li class="nav-item">
-                                            <a class="nav-link align-middle px-0" href="{{ url('/') }}">{{ __('Home') }}
-                                                
+                                            <a class="nav-link align-middle px-0"
+                                                href="{{ url('/') }}">{{ __('Home') }}
+
                                             </a>
                                         </li>
                                         <li>
@@ -91,11 +92,11 @@
                                                 <th>Alimentazione</th>
                                                 <th>Cilindrata</th>
                                                 <th>Cambio</th>
-                    
+
                                                 <th>Tipologia</th>
                                                 <th>Stato</th>
                                                 <th>Km</th>
-                                                
+
                                                 <th>Tools</th>
                                             </tr>
                                         </thead>
@@ -103,7 +104,7 @@
                                             @foreach ($cars as $car)
                                                 <tr>
                                                     <td>{{ $car->id }}</td>
-                                                    <td>{{ $car->marca }}</td>
+                                                    <td>{{ $car->brand_id }}</td>
                                                     <td>{{ $car->modello }}</td>
                                                     <td>
                                                         @php
@@ -120,7 +121,7 @@
                                                     <td>{{ $car->tipologia }}</td>
                                                     <td>{{ $car->stato }}</td>
                                                     <td>{{ $car->km }}</td>
-                                                
+
                                                     <td>
                                                         <div class="d-flex">
 

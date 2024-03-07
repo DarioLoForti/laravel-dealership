@@ -6,15 +6,10 @@
             <div class="col-12 mt-4">
                 <h1 class="text-white">{{ ucwords($car->modello) }}</h1>
             </div>
-            <div class="mt-4 col-6 d-flex">
-                <img width="400
-                px" src=" {{ $car->immagine }} ">
+            <div>
+                <img width="400px" src="{{ asset('storage/' . $car->immagine) }}">
             </div>
             <div class="mt-4 col-6  justify-content-center ">
-
-                <div>
-                    <h5 class="text-white mx-2">Marca: {{ $car->marca }}</h5>
-                </div>
                 <div>
                     @php
                         $prezzo_totale = $car->prezzo * 100;
@@ -63,7 +58,7 @@
                     <div>
 
                         <span class="text-white mx-2">Optional:
-                            
+
                             @forelse ($car->optionals as $optional)
                                 {{ $optional->nome }} <br>
                             @empty
@@ -80,8 +75,7 @@
                     <button class="btn btn-primary"><a href="{{ route('admin.cars.index') }}"></a>Torna alle auto</button>
                 </div>
                 <div class=" text-end col-6">
-                    <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}"
-                        class="mx-1">
+                    <a href="{{ route('admin.cars.edit', ['car' => $car->id]) }}" class="mx-1">
                         <button class="btn btn-sm btn-square btn-warning">Modifica</button></a>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
                         data-bs-target="#modal_delete_{{ $car->id }}">Elimina</button>
