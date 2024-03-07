@@ -17,9 +17,9 @@ use App\Http\Controllers\Api\BrandController as BrandController;
 |
 */
 
-Route::get('/cars', [CarController::class, 'index']);
+Route::get('/cars/{brand_id}', [CarController::class, 'index']);
 
-Route::get('/cars/{slug}', [CarController::class, 'show']);
+Route::get('/car/{slug}', [CarController::class, 'show']);
 
 Route::get('/brands', [BrandController::class, 'index']);
 

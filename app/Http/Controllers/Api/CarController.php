@@ -4,14 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Models\Car;
 
 class CarController extends Controller
 {
-    public function index()
+    public function index($brand_id)
     {
-        $cars = Car::with(['optionals'])->paginate(6);
+
+        if ($brand_id != 0) {
+            $cars = Car::with(['optionals'])->where('brand_id', $brand_id)->paginate(6);
+        } else {
+            $cars = Car::with(['optionals'])->paginate(6);
+        }
+
 
         return response()->json([
             'success' => true,
